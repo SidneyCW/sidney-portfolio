@@ -1,0 +1,13 @@
+@keyframes backgroundScroll {
+    0% {
+      background-position: center top;
+    }
+    100% {
+      background-position: center bottom;
+    }
+  }
+  
+  .animate-backgroundScroll {
+    animation: backgroundScroll 30s linear infinite;
+  }
+  
