@@ -10,4 +10,35 @@
   .animate-backgroundScroll {
     animation: backgroundScroll 30s linear infinite;
   }
+  .calendar {
+    --color-calendar-graph-day-bg: #1f2937;
+    --color-calendar-graph-day-L1-bg: #2563eb;
+    --color-calendar-graph-day-L2-bg: #3b82f6;
+    --color-calendar-graph-day-L3-bg: #60a5fa;
+    --color-calendar-graph-day-L4-bg: #93c5fd;
+    --color-calendar-graph-day-border: #374151;
+    font-family: 'Inter', sans-serif;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  
+  .calendar .contrib-legend {
+    display: none; /* optional: remove legend if it clutters */
+  }
+  
+  .calendar .float-left.text-gray {
+    color: #9ca3af; /* softer text */
+  }
+  
+  .calendar .text-muted {
+    color: #6b7280;
+  }
+  
+  .calendar svg {
+    height: auto !important;
+  }
+  .calendar rect.ContributionCalendar-day {
+    rx: 3px;
+    ry: 3px;
+  }
   

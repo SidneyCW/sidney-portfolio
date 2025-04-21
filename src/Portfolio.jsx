@@ -11,6 +11,14 @@ export default function Portfolio() {
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+  useEffect(() => {
+    if (window.GitHubCalendar) {
+      window.GitHubCalendar(".calendar", "SidneyCW", {
+        responsive: true,
+        tooltips: true,
+      });
+    }
+  }, []);
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
@@ -20,7 +28,7 @@ export default function Portfolio() {
       <div className="fixed top-0 left-0 w-full h-full bg-parallax bg-cover bg-center animate-backgroundScroll -z-20"></div>
 
       {/* 🖤 Dark overlay */}
-      <div className="absolute inset-0 bg-black/70 -z-10"></div>
+      <div className="fixed inset-0 min-h-screen bg-gradient-to-b from-black/50 via-black/60 to-black z-[-10] pointer-events-none"></div>
 
       {/* 📄 Main content */}
       <main className="relative z-10 max-w-5xl mx-auto px-6 py-12 space-y-16">
@@ -56,8 +64,23 @@ export default function Portfolio() {
                 hosted on a Raspberry Pi with Git automation + Nginx.
               </p>
               <div className="flex items-center gap-4 text-sm text-accent">
-                <button onClick={() => setActiveModal('mtg')} className="underline hover:text-accent/80">View Demo</button>
-              </div>
+                  <a
+                    href="http://107.179.174.106/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-accent/80"
+                  >
+                    View Demo
+                  </a>
+                  <a
+                    href="https://github.com/SidneyCW/mtg-win-tracking"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-accent/80"
+                  >
+                    View Repo
+                  </a>
+                </div>
             </motion.div>
 
             <motion.div className="bg-surface p-6 rounded-2xl shadow-xl hover:shadow-2xl transition group" whileHover={{ scale: 1.02 }}>
@@ -99,6 +122,17 @@ export default function Portfolio() {
             <li><strong>Bernoulli Challenge (Jan 2024):</strong> Placed top 50% in university-wide math competition.</li>
           </ul>
         </motion.section>
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
+          <h2 className="text-2xl font-semibold border-b border-gray-700 pb-2 mb-6">GitHub Contributions</h2>
+          <div className="bg-surface/70 rounded-2xl shadow-lg p-6 overflow-x-auto border border-gray-700">
+            <div id="github-contribution-calendar" className="calendar text-white text-sm leading-snug"></div>
+          </div>
+        </motion.section>
       </main>
 
       {/* Scroll To Top */}
@@ -110,12 +144,13 @@ export default function Portfolio() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 40 }}
             transition={{ duration: 0.3 }}
-            className="fixed bottom-6 right-6 bg-accent text-black px-4 py-2 rounded-full shadow-md hover:shadow-lg hover:scale-105 transition"
+            className="fixed bottom-6 right-6 z-50 bg-accent text-black px-4 py-2 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all backdrop-blur-md"
           >
-            ↑ Top
+            ↑
           </motion.button>
         )}
       </AnimatePresence>
+
 
       {/* Modals */}
       <AnimatePresence>
