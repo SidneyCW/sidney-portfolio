@@ -1,0 +1,22 @@
+@keyframes backgroundScroll {
+    0% {
+      background-position: center top;
+    }
+    100% {
+      background-position: center bottom;
+    }
+  }
+  
+  .animate-backgroundScroll {
+    animation: backgroundScroll 30s linear infinite;
+  }
+
+  /* Ensure background covers properly */
+.bg-parallax {
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+  /* Add fallback gradient */
+  background-image: linear-gradient(to bottom right, #1f2937, #000000, #374151);
+}
