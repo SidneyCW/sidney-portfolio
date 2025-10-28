@@ -3,6 +3,6 @@
 This is a pretty simple portfolio built on Vite and React. It mostly just shows my experience and education hope you enjoy!
 
 # Running it
-'''bash
+```bash
 npm run dev
-'''
+```
