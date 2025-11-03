@@ -49,14 +49,6 @@ const educationImages = [
 ]
 
 export default function Portfolio() {
-  const [showScrollTop, setShowScrollTop] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setShowScrollTop(window.scrollY > 300);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   const [hoveredProject, setHoveredProject] = useState(null);
   const [eduHovered, setEduHovered] = useState(false);
   const [eduImgIdx, setEduImgIdx] = useState(0);
@@ -74,7 +66,7 @@ export default function Portfolio() {
   return (
     <div>
       <Sidebar />
-      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '3rem 1.5rem 30rem', display: 'flex', flexDirection: 'column', gap: '4rem' }}>
+      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '3rem 1.5rem 25rem', display: 'flex', flexDirection: 'column', gap: '4rem' }}>
         <Header />
         <section id="aboutme"><AboutMe /></section>
         <section id="projects"><Projects
@@ -95,45 +87,6 @@ export default function Portfolio() {
         <ContactMe />
       </main>
 
-      {/* Scroll To Top Button */}
-      {showScrollTop && (
-        <motion.button
-          onClick={scrollToTop}
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 40 }}
-          transition={{ duration: 0.3 }}
-          style={{
-            position: 'fixed',
-            bottom: '1.5rem',
-            right: '1.5rem',
-            zIndex: 50,
-            backgroundColor: '#10b981',
-            color: 'black',
-            width: '3.5rem',
-            height: '3.5rem',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '1.25rem',
-            borderRadius: '50%',
-            border: 'none',
-            cursor: 'pointer',
-            boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-            transition: 'all 0.3s ease'
-          }}
-          onMouseEnter={(e) => {
-            e.target.style.backgroundColor = '#059669';
-            e.target.style.transform = 'scale(1.05)';
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.backgroundColor = '#10b981';
-            e.target.style.transform = 'scale(1)';
-          }}
-        >
-          ↑
-        </motion.button>
-      )}
     </div>
   );
 }
