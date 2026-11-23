@@ -1,19 +1,20 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
+import { Coffee } from 'lucide-react';
 
 export default function ContactMe() {
   return (
     <motion.div
+      className="contact-wrap"
       initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="w-full flex justify-center items-center py-16"
     >
-      <a
-        href="mailto:Sidney.scott.wood@gmail.com"
-        className="bg-emerald-500 text-black font-semibold text-lg px-6 py-3 rounded-lg shadow-md hover:bg-emerald-600 transition-all duration-200"
-      >
-        Contact Me
+      <a href="mailto:Sidney.scott.wood@gmail.com" className="contact-btn">
+        <Coffee size={20} aria-hidden="true" />
+        Let's grab a coffee
       </a>
+      <p className="contact-note">// response time: one espresso, give or take</p>
     </motion.div>
   );
 }
