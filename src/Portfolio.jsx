@@ -1,6 +1,7 @@
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import AboutMe from './components/AboutMe';
+import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Education from './components/Education';
@@ -14,6 +15,7 @@ export default function Portfolio() {
       <main className="site-main">
         <Header />
         <section id="aboutme"><AboutMe /></section>
+        <section id="experience"><Experience /></section>
         <section id="projects"><Projects /></section>
         <section id="skills"><Skills /></section>
         <section id="education"><Education /></section>

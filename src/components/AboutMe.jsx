@@ -9,9 +9,10 @@ export default function AboutMe() {
         <div className="about-text">
           <p>
             I'm a Computer Engineering student at York University with a passion for building
-            efficient systems and solving complex problems. During my internship at Spiri Robotics
-            I developed autonomous drone software, analyzed sensor data, and built simulation
-            environments with ROS, Gazebo, and ArduPilot.
+            efficient systems and solving complex problems. I'm currently a Software Engineering
+            Co-op at Baird, and before that I interned at Spiri Robotics, developing autonomous
+            drone software, analyzing sensor data, and building simulation environments with
+            ROS, Gazebo, and ArduPilot.
           </p>
           <p>
             Lately I've been building across the stack: a desktop todo app in Electron, a
