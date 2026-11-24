@@ -388,7 +388,7 @@ body {
 /* ---------------------------- education --------------------------- */
 .edu-link { text-decoration: none; display: block; }
 
-.edu-wrap { position: relative; min-height: 180px; }
+.edu-wrap { position: relative; min-height: 220px; }
 
 .edu-img {
   position: absolute;
@@ -406,7 +406,7 @@ body {
   opacity: 0.45;
 }
 
-.edu-text { position: relative; z-index: 1; }
+.edu-text { position: relative; z-index: 1; padding: 1.5rem; }
 
 .edu-text h3 {
   font-size: 1.15rem;
