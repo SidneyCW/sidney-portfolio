@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
 import { GraduationCap } from 'lucide-react';
 import Section from './Section';
 
@@ -37,20 +36,14 @@ export default function Education() {
         rel="noopener noreferrer"
       >
         <div className="edu-wrap">
-          <AnimatePresence>
-            {hovered && (
-              <motion.img
-                className="edu-img"
-                src={educationImages[imgIdx]}
-                alt=""
-                key={imgIdx}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0.45 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
-              />
-            )}
-          </AnimatePresence>
+          {educationImages.map((src, i) => (
+            <img
+              key={src}
+              className={`edu-img${hovered && i === imgIdx ? ' visible' : ''}`}
+              src={src}
+              alt=""
+            />
+          ))}
           <div className="edu-text">
             <h3>Computer Engineering (BEng)</h3>
             <p>York University, 2023–2028</p>
